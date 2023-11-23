@@ -1,0 +1,25 @@
+<div>
+  <button *ngIf="showUser" (click)="openUser()">Get</button>
+</div>
+
+<button *ngIf="showLogin" (click)="openLogin()">Login</button>
+
+<div>
+  <form [formGroup]="form" (ngSubmit)="onSubmit()"> 
+    <div formArrayName="course"> 
+  
+        <div *ngFor="let course of course.controls; index as i"> 
+            <input [formControlName]="i" placeholder="Course"> 
+        </div> 
+    </div> 
+    <br> 
+    <button>Submit</button> 
+    <br><br> 
+</form> 
+  
+<button (click)="addCourse()">Add Course</button>
+</div>
+
+
+<router-outlet></router-outlet>
+
